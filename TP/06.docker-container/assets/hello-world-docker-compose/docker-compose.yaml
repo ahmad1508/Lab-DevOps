@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redisdb:
+    image: redis
+  web:
+    depends_on:
+      - redisdb
+    build: .
+    ports:
+      - "5000:8080"
+    environment:
+      REDIS_HOST: redisdb
+      REDIS_PORT: 6379
