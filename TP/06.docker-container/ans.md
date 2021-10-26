@@ -10,10 +10,7 @@ sudo docker volume create db_data
 ```
 
 ```zsh
-docker service create -d \
-  --name devtest-service \
-  --mount source=db_data,target=/data \
-  nginx:latest
+docker-compose up
 ```
 
 ## 5.9
